@@ -19,23 +19,30 @@
           <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
         </v-list>
       </v-navigation-drawer>
+
             <v-app-bar :elevation="2">
   <template v-slot:prepend>
+
     <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
   </template>
 
   <v-app-bar-title>Application Bar</v-app-bar-title>
 </v-app-bar>
+
 <v-main>
-  <v-container>
+  <v-container fluid>
     <slot />
     </v-container>
     </v-main>
+
   </v-app>
 </template>
 
 <script setup>
-const drawer = ref();
+import { ref } from 'vue'
+const drawer = ref(true);
+
+const rail = ref(true)
 </script>
 
 <style>
